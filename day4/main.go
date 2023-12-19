@@ -11,7 +11,7 @@ type void struct{}
 var member void
 
 func solve() {
-	input, err := os.ReadFile("input2.txt")
+	input, err := os.ReadFile("input.txt")
 
 	if err != nil {
 		fmt.Println("File reading error", err)

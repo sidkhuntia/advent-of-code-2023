@@ -13,6 +13,7 @@ import (
 	// "github.com/sidkhuntia/advent-of-code-2023/day3"
 	// "github.com/sidkhuntia/advent-of-code-2023/day4"
 	"github.com/sidkhuntia/advent-of-code-2023/day05"
+	"github.com/sidkhuntia/advent-of-code-2023/day06"
 )
 
 func main() {
@@ -40,6 +41,8 @@ func main() {
 	switch day {
 	case "day05":
 		runDay(day, day05.Part01, day05.Part02, input, debugMode)
+	case "day06":
+		runDay(day, day06.Part01, day06.Part02, input, debugMode)
 
 	default:
 		log.Fatalf("Unknown day: %s\n", day)
@@ -67,7 +70,7 @@ func runDay(day string, part01, part02 func(string), input string, debugMode str
 	if debugMode != "" {
 		return
 	}
-	fmt.Printf("===== %s =====\n", day)
+	fmt.Printf("===== %s =====\n\n", day)
 
 	if part01 != nil {
 		start := time.Now()

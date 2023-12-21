@@ -1,12 +1,11 @@
-package main
+package day04_test
 
 import (
 	"testing"
 )
 
-func BenchmarkCode(b *testing.B) {
+func bankai(b *testing.B) {
 
 	for i := 0; i < b.N; i++ {
-		solve()
 	}
 }

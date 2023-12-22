@@ -75,8 +75,8 @@ func Part02(input string) {
 
 	}
 
-	fmt.Printf("Length of Starting Nodes: %v\n", len(startingNodes))
-	fmt.Printf("Length of Ending Nodes: %v\n", len(endingNodes))
+	// fmt.Printf("Length of Starting Nodes: %v\n", len(startingNodes))
+	// fmt.Printf("Length of Ending Nodes: %v\n", len(endingNodes))
 
 	minStepsToReachEnd := make([]int64, 0)
 

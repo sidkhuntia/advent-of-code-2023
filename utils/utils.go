@@ -43,3 +43,19 @@ func MinInt64(a, b int64) int64 {
 	return b
 }
 
+func GCD(a, b int) int {
+	for b != 0 {
+		t := b
+		b = a % b
+		a = t
+	}
+	return a
+}
+func GCD64(a, b int64) int64 {
+	for b != 0 {
+		t := b
+		b = a % b
+		a = t
+	}
+	return a
+}

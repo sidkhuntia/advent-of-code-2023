@@ -81,6 +81,26 @@ func Part01(input string) {
 
 	ans := 0
 
+	preComputedX := make([][]int, len(filledPointsX))
+	preComputedY := make([][]int, len(filledPointsX))
+
+	for i := range preComputedX {
+		preComputedX[i] = make([]int, 2)
+		preComputedY[i] = make([]int, 2)
+	}
+
+	for _, point := range starPoints {
+		xCor := point.x
+		yCor := point.y
+
+		preComputedX[xCor][0] = lowerBound(emptyPointsX, xCor)
+		preComputedX[xCor][1] = upperBound(emptyPointsX, xCor)
+
+		preComputedY[yCor][0] = lowerBound(emptyPointsY, yCor)
+		preComputedY[yCor][1] = upperBound(emptyPointsY, yCor)
+
+	}
+
 	for curr, starPoint := range starPoints {
 		xCor := starPoint.x
 		yCor := starPoint.y
@@ -93,12 +113,12 @@ func Part01(input string) {
 
 			// fmt.Printf("Actual dist: %d\n", dist)
 
-			emptyPointsXLowerBound := lowerBound(emptyPointsX, utils.MinInt(xCor, xCor2))
-			emptyPointsXUpperBound := upperBound(emptyPointsX, utils.Max(xCor, xCor2))
+			emptyPointsXLowerBound := preComputedX[utils.MinInt(xCor, xCor2)][0]
+			emptyPointsXUpperBound := preComputedX[utils.Max(xCor, xCor2)][1]
 
-			emptyPointsYLowerBound := lowerBound(emptyPointsY, utils.MinInt(yCor, yCor2))
-			emptyPointsYUpperBound := upperBound(emptyPointsY, utils.Max(yCor, yCor2))
-
+			emptyPointsYLowerBound := preComputedY[utils.MinInt(yCor, yCor2)][0]
+			emptyPointsYUpperBound := preComputedY[utils.Max(yCor, yCor2)][1]
+			
 			// fmt.Printf("X lower bound: %d\n", emptyPointsXLowerBound)
 			// fmt.Printf("X upper bound: %d\n", emptyPointsXUpperBound)
 			// fmt.Printf("Y lower bound: %d\n", emptyPointsYLowerBound)

@@ -66,3 +66,10 @@ func GCD64(a, b int64) int64 {
 	}
 	return a
 }
+
+func AbsInt(a int) int {
+	if a < 0 {
+		return -a
+	}
+	return a
+}

@@ -18,6 +18,7 @@ import (
 	"github.com/sidkhuntia/advent-of-code-2023/day08"
 	"github.com/sidkhuntia/advent-of-code-2023/day09"
 	"github.com/sidkhuntia/advent-of-code-2023/day10"
+	"github.com/sidkhuntia/advent-of-code-2023/day11"
 )
 
 func main() {
@@ -55,6 +56,8 @@ func main() {
 		runDay(day, day09.Part01, day09.Part02, input, debugMode)
 	case "day10":
 		runDay(day, day10.Part01, day10.Part02, input, debugMode)
+	case "day11":
+		runDay(day, day11.Part01, day11.Part02, input, debugMode)
 
 	default:
 		log.Fatalf("Unknown day: %s\n", day)
